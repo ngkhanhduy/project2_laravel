@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2021 at 10:37 AM
+-- Generation Time: Aug 27, 2021 at 03:29 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -193,6 +193,18 @@ INSERT INTO `comments` (`Id`, `New_Id`, `User_Id`, `Content`, `Updated_at`, `Cre
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -312,9 +324,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`Id`, `Name`, `email`, `password`, `Address`, `Sex`, `Avatar`, `Role`, `Updated_at`, `Created_at`) VALUES
 (9, 'Tư Mã Duy', 'ngkhanhduy1@gmail.com', '$2y$10$x16CJvTjCBdzZF0qCWXfU.ZQ.e7DrNtMpKcu.8VsxSr4.PBf2uzgi', NULL, NULL, NULL, 'Author', '2021-08-19', '2021-08-11'),
 (10, 'Khanh Duy', 'admin@gmail.com', '$2y$10$2hym7ifEanbf5TBcMrmDzOt6m9.an/8ME4gmnRrFkVfhr077JnVwO', NULL, NULL, NULL, 'Admin', '2021-08-11', '2021-08-11'),
-(12, 'Nguyễn Quang Khánh', 'quangkhanh@gmail.com', '$2y$10$0eBVUThRfeZ0VubEMvOqOefqyRriZQoNcfSNcdXCXJsjchxIqKy7.', NULL, NULL, NULL, 'Admin', '2021-08-19', '2021-08-19'),
-(13, 'Trần đức long', 'long@gmail.com', '$2y$10$0kXut/8ZLcM/5GoZy8DS0.Ty9I.zIS/xxzRij42uKDEAH8EObBJ52', NULL, NULL, NULL, 'Admin', '2021-08-19', '2021-08-19'),
-(14, 'Lê nhật nam', 'nam@gmail.com', '$2y$10$y0qQfFqV8FCUAOvIaWNOtOk8MXIGjGyMERphpr2YAMDFeOwXx0yRW', NULL, NULL, NULL, 'Admin', '2021-08-19', '2021-08-19');
+(12, 'Nguyễn Quang Khánh', 'quangkhanh@gmail.com', '$2y$10$0eBVUThRfeZ0VubEMvOqOefqyRriZQoNcfSNcdXCXJsjchxIqKy7.', NULL, NULL, NULL, 'Author', '2021-08-26', '2021-08-19'),
+(13, 'Trần đức long', 'long@gmail.com', '$2y$10$0kXut/8ZLcM/5GoZy8DS0.Ty9I.zIS/xxzRij42uKDEAH8EObBJ52', NULL, NULL, NULL, 'Viewer', '2021-08-26', '2021-08-19'),
+(14, 'Lê nhật nam', 'nam@gmail.com', '$2y$10$y0qQfFqV8FCUAOvIaWNOtOk8MXIGjGyMERphpr2YAMDFeOwXx0yRW', NULL, NULL, NULL, 'Author', '2021-08-26', '2021-08-19'),
+(15, 'Agon', 'abcd@gmail.com', '$2y$10$lyiSzuMiBLnlR4lWlRXe6.aRjwsOLBaDQNjt1rrr2ufKyjUS76WgC', NULL, NULL, NULL, 'Viewer', '2021-08-26', '2021-08-26'),
+(16, 'AgonTFT', 'duy.nk183906@sis.hust.edu.vn', '$2y$10$zNMATXMYD3taBECJXPc4X.9rJ5.yf7RccfhC.FQGZ7Fe2QCRmspJe', NULL, NULL, NULL, 'Viewer', '2021-08-27', '2021-08-27');
 
 --
 -- Indexes for dumped tables
@@ -334,6 +348,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `New_Id` (`New_Id`),
   ADD KEY `User_Id` (`User_Id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `news`
@@ -357,7 +377,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categorys`
 --
 ALTER TABLE `categorys`
-  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -366,16 +386,22 @@ ALTER TABLE `comments`
   MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
